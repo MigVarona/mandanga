@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       <section className="ticker" aria-label="Anuncio">
-        <div>PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · </div>
+        <div>PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · </div>
       </section>
 
       <section className="intro section-grid" id="info">
@@ -101,8 +101,6 @@ export default function Home() {
 
       <footer id="contacto">
         <div className="footer-mark">tunkashila<span>®</span></div>
-        <p>Nos vemos por allí.<br /><a href="mailto:hola@mandanga2027.com">hola@mandanga2027.com</a></p>
-        <p className="footer-small">instagram ↗<br />privacidad · cookies</p>
       </footer>
     </main>
   );

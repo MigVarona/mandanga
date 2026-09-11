@@ -71,7 +71,7 @@ input:focus { border-color: var(--acid); }
 .success-message h3 { font-size: 35px; margin: 15px 0 5px; }
 .success-message p { color: #d6d9ff; font-size: 14px; margin-bottom: 35px; }
 .success-message button { background: transparent; border: 1px solid var(--acid); color: var(--acid); }
-footer { align-items: flex-end; background: var(--ink); color: var(--cream); display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 55px 8vw 50px; }
+footer { background: var(--ink); color: var(--cream); padding: 45px 8vw; }
 .footer-mark { color: var(--acid); font-size: 38px; }
 footer p { font-size: 13px; line-height: 1.45; margin: 0; }
 footer a { border-bottom: 1px solid var(--pink); }
