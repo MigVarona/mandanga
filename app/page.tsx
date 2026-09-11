@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       <section className="ticker" aria-label="Anuncio">
-        <div>JUNTOS SE ESTÁ MEJOR · VEN CON GANAS · JUNTOS SE ESTÁ MEJOR · VEN CON GANAS · </div>
+        <div>PAELLA · DJS · AMIGOS · CASA VIEJA · PAELLA · DJS · AMIGOS · CASA VIEJA · </div>
       </section>
 
       <section className="intro section-grid" id="info">

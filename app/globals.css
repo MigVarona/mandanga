@@ -25,7 +25,7 @@ button, input { font: inherit; }
 .hero-sticker { background: var(--blue); border-radius: 50%; color: var(--cream); font-size: 12px; font-weight: 800; line-height: .9; padding: 28px 20px; position: absolute; right: 25%; text-align: center; text-transform: uppercase; top: 48%; transform: rotate(-12deg); }
 .hero-sticker strong { font-size: 38px; line-height: 1; }
 .hero-footer { bottom: 32px; display: flex; font-size: 10px; font-weight: 800; justify-content: space-between; left: 8vw; letter-spacing: .08em; position: absolute; right: 8vw; text-transform: uppercase; }
-.ticker { background: var(--acid); font-size: 13px; font-weight: 900; overflow: hidden; padding: 15px 0; text-transform: uppercase; white-space: nowrap; }
+.ticker { background: var(--acid); font-size: clamp(18px, 1.8vw, 26px); font-weight: 900; letter-spacing: -.03em; overflow: hidden; padding: 17px 0; text-transform: uppercase; white-space: nowrap; }
 .ticker div { animation: ticker 18s linear infinite; }
 .section-grid { display: grid; gap: 30px; grid-template-columns: 25% 1fr; padding: 130px 8vw; }
 .section-label { color: #6b675e; padding-top: 9px; }
