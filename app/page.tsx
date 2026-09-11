@@ -26,7 +26,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow">Casa Vieja, Ávila · 22 de mayo de 2027</p>
+          <p className="eyebrow">Casa Vieja, Ávila · sábado 22 de mayo de 2027</p>
           <h1>TUNKASHILA<br /><i>2027</i></h1>
           <p className="hero-note">Un día para vernos, compartir<br />y pasarlo bien.</p>
         </div>
@@ -77,7 +77,8 @@ export default function Home() {
                 </div>
                 <fieldset className="stay-options">
                   <legend>Elige tu opción</legend>
-                  <p className="stay-includes">El precio incluye comida, cena y DJs.</p>
+                  <p className="stay-schedule">La fiesta es el sábado. Puedes llegar desde el viernes y pasar una o dos noches.</p>
+                  <p className="stay-includes">El precio incluye la comida y la cena del sábado, además de DJs.</p>
                   <label className="stay-option">
                     <input type="radio" name="stay" value="one-night" required />
                     <span><strong>Cama · una noche · 80 €</strong></span>
@@ -108,7 +109,7 @@ export default function Home() {
       </section>
 
       <footer id="contacto">
-        <div className="footer-mark">tunkashila<span>®</span></div>
+        <div className="footer-mark">tunkashila<span>®</span> mandanga</div>
       </footer>
     </main>
   );

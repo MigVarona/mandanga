@@ -50,6 +50,7 @@ form { max-width: 410px; }
 .form-intro p { font-size: 14px; line-height: 1.4; margin: 0; }
 .stay-options { border: 0; border-bottom: 1px solid #989287; margin: 0 0 26px; padding: 0 0 21px; }
 .stay-options legend { font-size: 11px; font-weight: 800; letter-spacing: .08em; padding: 0; text-transform: uppercase; }
+.stay-schedule { font-size: 13px; font-weight: 650; line-height: 1.35; margin: 10px 0 6px; }
 .stay-includes { color: #6b675e; font-size: 12px; line-height: 1.35; margin: 8px 0 14px; }
 .stay-option { align-items: center; border-top: 1px solid #c3bcae; cursor: pointer; display: flex; font-size: 14px; gap: 10px; padding: 12px 0; }
 .stay-option:last-child { border-bottom: 1px solid #c3bcae; }
