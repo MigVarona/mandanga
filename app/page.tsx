@@ -1,69 +1,91 @@
-import Image from "next/image";
+"use client";
+
+import { FormEvent, useState } from "react";
 
 export default function Home() {
+  const [registered, setRegistered] = useState(false);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setRegistered(true);
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <nav className="site-nav">
+        <a className="wordmark" href="#inicio" aria-label="Tunkashila 2027, inicio">
+          tunkashila<span>®</span>
+        </a>
+        <div className="nav-links">
+          <a href="#info">la fiesta</a>
+          <a href="#registro">me apunto</a>
+          <a href="#contacto">di hola</a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <a className="nav-ticket" href="#registro">me apunto ↗</a>
+      </nav>
+
+      <section className="hero" id="inicio">
+        <div className="hero-copy">
+          <p className="eyebrow">Casa Vieja, Ávila · 22 de mayo de 2027</p>
+          <h1>TUNKASHILA<br /><i>2027</i></h1>
+          <p className="hero-note">Un día para vernos, compartir<br />y pasarlo bien.</p>
         </div>
-      </main>
-    </div>
+        <div className="sunburst" aria-hidden="true"><span>una fiesta<br />hecha<br />con amigos<br />para<br />amigos</span></div>
+        <div className="hero-sticker" aria-hidden="true">edición<br /><strong>01</strong></div>
+        <div className="hero-footer">
+          <span>paella · DJs · bailoteo</span>
+          <span>© tunkashila</span>
+          <span>desliza y apúntate ↓</span>
+        </div>
+      </section>
+
+      <section className="ticker" aria-label="Anuncio">
+        <div>JUNTOS SE ESTÁ MEJOR · VEN CON GANAS · JUNTOS SE ESTÁ MEJOR · VEN CON GANAS · </div>
+      </section>
+
+      <section className="intro section-grid" id="info">
+        <div className="section-label">01 / el plan</div>
+        <div className="intro-content">
+          <p className="big-copy">Un fin de semana para <span>juntarnos sin prisa</span> y celebrar que seguimos aquí.</p>
+          <div className="intro-details">
+            <p>No hace falta saberlo todo todavía. Habrá paella, DJs, mesa larga y tiempo de sobra para ponernos al día. El resto saldrá sobre la marcha.</p>
+            <a className="text-link" href="#registro">apúntame a la lista <span>↘</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="register section-grid" id="registro">
+        <div className="section-label">02 / quién se apunta</div>
+        <div className="register-panel">
+          <div className="register-heading">
+            <p className="eyebrow">Para contar contigo</p>
+            <h2>¿Te vienes<br /><i>a celebrarlo?</i></h2>
+          </div>
+          {registered ? (
+            <div className="success-message" role="status">
+              <span className="success-number">¡EH!</span>
+              <h3>Qué alegría.</h3>
+              <p>Ya estás en la lista. En breve te contamos todo lo que falta.</p>
+              <button type="button" onClick={() => setRegistered(false)}>Apuntar a otra persona</button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="name">¿Cómo te llamamos?</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+              <label htmlFor="email">Tu correo</label>
+              <input id="email" name="email" type="email" placeholder="para mandarte todos los detalles" required />
+              <label className="check-row"><input type="checkbox" required /> <span>Sí, cuenta conmigo (salvo catástrofe mayor)</span></label>
+              <button className="submit-button" type="submit">cuenta conmigo <span>↗</span></button>
+            </form>
+          )}
+        </div>
+      </section>
+
+      <footer id="contacto">
+        <div className="footer-mark">tunkashila<span>®</span></div>
+        <p>Nos vemos por allí.<br /><a href="mailto:hola@mandanga2027.com">hola@mandanga2027.com</a></p>
+        <p className="footer-small">instagram ↗<br />privacidad · cookies</p>
+      </footer>
+    </main>
   );
 }
