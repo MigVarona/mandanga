@@ -17,14 +17,17 @@ button, input { font: inherit; }
 .hero-copy { position: relative; z-index: 2; }
 .eyebrow, .section-label { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .hero h1 { font-size: clamp(88px, 11vw, 170px); font-weight: 950; letter-spacing: -.105em; line-height: .75; margin: 42px 0 0 -10px; max-width: 950px; }
-.hero h1 i { color: var(--acid); font-style: italic; margin-left: 15vw; }
-.hero-note { font-size: 16px; font-weight: 650; line-height: 1.2; margin: 54px 0 0 5px; }
+.hero h1 span { display: block; font-size: .56em; line-height: .82; }
+.hero h1 i { color: var(--acid); display: block; font-style: italic; margin-left: 15vw; }
+.hero-date { font-size: clamp(20px, 2vw, 32px); font-weight: 900; letter-spacing: -.05em; line-height: .95; margin: 36px 0 0 5px; text-transform: uppercase; }
+.hero-note { font-size: 16px; font-weight: 650; line-height: 1.2; margin: 27px 0 0 5px; }
 .sunburst { align-items: center; background: repeating-conic-gradient(var(--acid) 0 10deg, transparent 10deg 20deg); border-radius: 50%; display: flex; height: 430px; justify-content: center; position: absolute; right: -90px; top: 90px; width: 430px; }
 .sunburst:before { background: var(--acid); border-radius: 50%; content: ""; height: 270px; position: absolute; width: 270px; }
 .sunburst span { font-size: 15px; font-weight: 900; line-height: .95; position: relative; text-align: center; text-transform: uppercase; transform: rotate(12deg); width: 150px; }
 .hero-sticker { background: var(--blue); border-radius: 50%; color: var(--cream); font-size: 12px; font-weight: 800; line-height: .9; padding: 28px 20px; position: absolute; right: 25%; text-align: center; text-transform: uppercase; top: 48%; transform: rotate(-12deg); }
 .hero-sticker strong { font-size: 38px; line-height: 1; }
-.hero-footer { bottom: 32px; display: flex; font-size: 10px; font-weight: 800; justify-content: space-between; left: 8vw; letter-spacing: .08em; position: absolute; right: 8vw; text-transform: uppercase; }
+.hero-footer { align-items: flex-end; bottom: 32px; display: flex; font-size: 10px; font-weight: 800; justify-content: space-between; left: 8vw; letter-spacing: .08em; position: absolute; right: 8vw; text-transform: uppercase; }
+.hero-footer span:first-child { font-size: clamp(28px, 4.5vw, 68px); letter-spacing: -.07em; line-height: .82; }
 .ticker { background: var(--acid); font-size: clamp(18px, 1.8vw, 26px); font-weight: 900; letter-spacing: -.03em; overflow: hidden; padding: 17px 0; text-transform: uppercase; white-space: nowrap; }
 .ticker div { animation: ticker 18s linear infinite; }
 .section-grid { display: grid; gap: 30px; grid-template-columns: 25% 1fr; padding: 130px 8vw; }

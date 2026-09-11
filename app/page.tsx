@@ -26,8 +26,9 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow">Casa Vieja, Ávila · sábado 22 de mayo de 2027</p>
-          <h1>TUNKASHILA<br /><i>2027</i></h1>
+          <p className="eyebrow">Casa Vieja, Ávila</p>
+          <h1>TUNKASHILA<br /><span>MANDANGA</span><i>2027</i></h1>
+          <p className="hero-date">Sábado 22 de mayo</p>
           <p className="hero-note">Un día para vernos, compartir<br />y pasarlo bien.</p>
         </div>
         <div className="sunburst" aria-hidden="true"><span>una fiesta<br />hecha<br />con amigos<br />para<br />amigos</span></div>
