@@ -58,26 +58,44 @@ export default function Home() {
         <div className="section-label">02 / quién se apunta</div>
         <div className="register-panel">
           <div className="register-heading">
-            <p className="eyebrow">Para contar contigo</p>
-            <h2>¿Te vienes<br /><i>a celebrarlo?</i></h2>
+            <p className="eyebrow">Para organizar la fiesta</p>
+            <h2>¿Te<br /><i>apuntas?</i></h2>
           </div>
-          {registered ? (
-            <div className="success-message" role="status">
-              <span className="success-number">¡EH!</span>
-              <h3>Qué alegría.</h3>
-              <p>Ya estás en la lista. En breve te contamos todo lo que falta.</p>
-              <button type="button" onClick={() => setRegistered(false)}>Apuntar a otra persona</button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="name">¿Cómo te llamamos?</label>
-              <input id="name" name="name" type="text" placeholder="Tu nombre" required />
-              <label htmlFor="email">Tu correo</label>
-              <input id="email" name="email" type="email" placeholder="para mandarte todos los detalles" required />
-              <label className="check-row"><input type="checkbox" required /> <span>Sí, cuenta conmigo (salvo catástrofe mayor)</span></label>
-              <button className="submit-button" type="submit">cuenta conmigo <span>↗</span></button>
-            </form>
-          )}
+          <div className="register-signup">
+            {registered ? (
+              <div className="success-message" role="status">
+                <span className="success-number">¡EH!</span>
+                <h3>Qué alegría.</h3>
+                <p>Ya estás en la lista. Gracias por ayudarnos a saber cuántos seremos.</p>
+                <button type="button" onClick={() => setRegistered(false)}>Apuntar a otra persona</button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="form-intro">
+                  <h3>Apúntate aquí</h3>
+                  <p>Confirma si vienes para que podamos organizar la fiesta.</p>
+                </div>
+                <fieldset className="stay-options">
+                  <legend>¿Cuántas noches te quedas?</legend>
+                  <p className="stay-includes">El precio incluye comida, cena y DJs.</p>
+                  <label className="stay-option">
+                    <input type="radio" name="stay" value="one-night" required />
+                    <span><strong>Una noche · 80 €</strong></span>
+                  </label>
+                  <label className="stay-option">
+                    <input type="radio" name="stay" value="two-nights" required />
+                    <span><strong>Dos noches · 100 €</strong></span>
+                  </label>
+                </fieldset>
+                <label htmlFor="name">¿Cómo te llamamos?</label>
+                <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+                <label htmlFor="guests">¿Cuántas personas venís?</label>
+                <input id="guests" name="guests" type="number" min="1" step="1" placeholder="1" required />
+                <label className="check-row"><input type="checkbox" required /> <span>Sí, cuenta conmigo (salvo catástrofe mayor)</span></label>
+                <button className="submit-button" type="submit">cuenta conmigo <span>↗</span></button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
 
