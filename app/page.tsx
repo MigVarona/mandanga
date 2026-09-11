@@ -76,15 +76,23 @@ export default function Home() {
                   <p>Confirma si vienes para que podamos organizar la fiesta.</p>
                 </div>
                 <fieldset className="stay-options">
-                  <legend>¿Cuántas noches te quedas?</legend>
+                  <legend>Elige tu opción</legend>
                   <p className="stay-includes">El precio incluye comida, cena y DJs.</p>
                   <label className="stay-option">
                     <input type="radio" name="stay" value="one-night" required />
-                    <span><strong>Una noche · 80 €</strong></span>
+                    <span><strong>Cama · una noche · 80 €</strong></span>
                   </label>
                   <label className="stay-option">
                     <input type="radio" name="stay" value="two-nights" required />
-                    <span><strong>Dos noches · 100 €</strong></span>
+                    <span><strong>Cama · dos noches · 100 €</strong></span>
+                  </label>
+                  <label className="stay-option">
+                    <input type="radio" name="stay" value="van-or-tent-one-night" required />
+                    <span><strong>Furgo o tienda · una noche · 70 €</strong></span>
+                  </label>
+                  <label className="stay-option">
+                    <input type="radio" name="stay" value="van-or-tent-two-nights" required />
+                    <span><strong>Furgo o tienda · dos noches · 80 €</strong></span>
                   </label>
                 </fieldset>
                 <label htmlFor="name">¿Cómo te llamamos?</label>
