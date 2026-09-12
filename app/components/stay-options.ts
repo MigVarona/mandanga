@@ -1,8 +1,15 @@
-export type StayOption = { value: string; label: string };
+export type StayOption = { value: string; label: string; price: number };
 
-export const STAY_OPTIONS: StayOption[] = [
-  { value: "one-night", label: "Cama · una noche · 70 €" },
-  { value: "two-nights", label: "Cama · dos noches · 90 €" },
-  { value: "van-or-tent-one-night", label: "Furgo o tienda · una noche · 60 €" },
-  { value: "van-or-tent-two-nights", label: "Furgo o tienda · dos noches · 70 €" },
+/** Precio y etiqueta viven juntos: la etiqueta es también el nombre de la opción en Notion. */
+const RAW = [
+  { value: "one-night", place: "Cama", nights: "una noche", price: 70 },
+  { value: "two-nights", place: "Cama", nights: "dos noches", price: 90 },
+  { value: "van-or-tent-one-night", place: "Furgo o tienda", nights: "una noche", price: 60 },
+  { value: "van-or-tent-two-nights", place: "Furgo o tienda", nights: "dos noches", price: 70 },
 ];
+
+export const STAY_OPTIONS: StayOption[] = RAW.map(({ value, place, nights, price }) => ({
+  value,
+  price,
+  label: `${place} · ${nights} · ${price} €`,
+}));

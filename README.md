@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Lista de apuntados (Notion)
+
+El formulario escribe en la base de Notion **Tunkashila 2027 · Apuntados**
+(`361045dc0d8c435981e2c338d58e4895`) desde una Server Action, así que el token
+nunca llega al navegador.
+
+Para que funcione hacen falta dos variables de entorno (ver `.env.example`):
+
+1. Crea una integración interna en <https://www.notion.so/my-integrations> y copia
+   su token (`ntn_…`) en `NOTION_TOKEN`.
+2. Abre la base en Notion → menú `···` → **Conexiones** → añade esa integración.
+   Sin este paso la API responde 404 aunque el token sea correcto.
+3. En local, guarda ambas variables en `.env.local`. En Vercel, en
+   Settings → Environment Variables, y vuelve a desplegar.
+
+Los precios y las etiquetas de las opciones viven en
+`app/components/stay-options.ts`. Las etiquetas coinciden letra por letra con las
+opciones del campo `Opción` en Notion: si cambias un precio, actualiza también la
+opción en Notion (o Notion creará una opción nueva al recibir la primera alta).
