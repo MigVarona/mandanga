@@ -80,6 +80,7 @@ button, input { font: inherit; }
 .plan-card h3 { font-size: 30px; letter-spacing: -.06em; margin: 18px 0 0; text-transform: lowercase; }
 .plan-title { color: var(--pink); font-family: var(--serif); font-size: 27px; font-style: italic; line-height: 1; margin: 2px 0 16px; }
 .plan-card p { font-size: 13.5px; line-height: 1.45; margin: 0; }
+.plan-card .plan-note { border-top: 2px solid var(--ink); font-weight: 750; margin-top: 16px; padding-top: 12px; }
 
 /* --- organizadores --- */
 .crew { background: var(--ink); color: var(--cream); }

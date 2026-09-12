@@ -68,7 +68,6 @@ export function SiteNav() {
     >
       <div className="nav-links">
         <a href="#info">la fiesta</a>
-        <a href="#registro">me apunto</a>
       </div>
       <Magnetic strength={0.5}>
         <a className="nav-ticket" href="#registro">me apunto ↗</a>

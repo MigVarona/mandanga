@@ -4,9 +4,11 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { EASE, Magnetic, Reveal, SplitWords, stagger } from "./motion-primitives";
 
-const DAYS = [
+type Day = { day: string; date: string; title: string; copy: string; note?: string };
+
+const DAYS: Day[] = [
   { day: "Viernes", date: "21 mayo", title: "Llegada", copy: "Quien pueda, que caiga pronto. Furgos, tiendas y las primeras cervezas mientras se monta todo." },
-  { day: "Sábado", date: "22 mayo", title: "La fiesta", copy: "Paella al mediodía y DJs toda la tarde, hasta que se ponga el sol." },
+  { day: "Sábado", date: "22 mayo", title: "La fiesta", copy: "Paella al mediodía y DJs toda la tarde, hasta que el cuerpo aguante.", note: "Si te apetece pinchar, dínoslo para organizarlo." },
   { day: "Domingo", date: "23 mayo", title: "Comida tranquila", copy: "Sin prisa: nos levantamos cuando salga, comemos todos juntos y estiramos el domingo lo que haga falta." },
 ];
 
@@ -63,6 +65,7 @@ export function Plan() {
               <h3>{entry.day}</h3>
               <p className="plan-title">{entry.title}</p>
               <p>{entry.copy}</p>
+              {entry.note && <p className="plan-note">{entry.note}</p>}
             </motion.article>
           ))}
         </motion.div>
