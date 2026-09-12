@@ -1,5 +1,6 @@
 import { Hero } from "./components/hero";
 import { Marquee } from "./components/marquee";
+import { Crew } from "./components/crew";
 import { Plan } from "./components/plan";
 import { Register } from "./components/register";
 import { SiteFooter } from "./components/site-footer";
@@ -20,6 +21,7 @@ export default function Home() {
           <Marquee text="PAELLA · DJS · AMIGOS · CASA VIEJA · " baseVelocity={4} repeat={4} />
         </section>
         <Plan />
+        <Crew />
         <Register />
         <SiteFooter />
       </div>

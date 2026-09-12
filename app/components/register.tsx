@@ -3,13 +3,8 @@
 import { FormEvent, useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { EASE, Magnetic, Reveal, SPRING, riseIn, stagger } from "./motion-primitives";
-
-const STAY_OPTIONS = [
-  { value: "one-night", label: "Cama · una noche · 80 €" },
-  { value: "two-nights", label: "Cama · dos noches · 100 €" },
-  { value: "van-or-tent-one-night", label: "Furgo o tienda · una noche · 70 €" },
-  { value: "van-or-tent-two-nights", label: "Furgo o tienda · dos noches · 80 €" },
-];
+import { IncludesDialog } from "./includes-dialog";
+import { STAY_OPTIONS } from "./stay-options";
 
 const CONFETTI = [
   { x: -140, y: -120, rotate: -35, color: "var(--acid)", size: 26 },
@@ -24,6 +19,8 @@ export function Register() {
   const ref = useRef<HTMLElement>(null);
   const [registered, setRegistered] = useState(false);
   const [stay, setStay] = useState("");
+  const [infoOpen, setInfoOpen] = useState(false);
+  const infoTrigger = useRef<HTMLButtonElement>(null);
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const blobY = useTransform(scrollYProgress, [0, 1], ["22%", "-22%"]);
@@ -40,7 +37,7 @@ export function Register() {
       <motion.div className="register-blob" style={{ y: blobY }} aria-hidden="true" />
       <motion.div className="register-square" style={{ y: squareY, rotate: squareRotate }} aria-hidden="true" />
 
-      <div className="section-label">02 / quién se apunta</div>
+      <div className="section-label">03 / quién se apunta</div>
       <div className="register-panel">
         <motion.div
           className="register-heading"
@@ -85,6 +82,7 @@ export function Register() {
                   <span className="success-number">¡EH!</span>
                   <h3>Qué alegría.</h3>
                   <p>Ya estás en la lista. Gracias por ayudarnos a saber cuántos seremos.</p>
+                  <p className="success-note">Ahora ponte en contacto con nosotros para hacer el Bizum, así podemos ir gestionando las compras. ¡Gracias!</p>
                   <Magnetic strength={0.2} block>
                     <button type="button" onClick={() => setRegistered(false)}>Apuntar a otra persona</button>
                   </Magnetic>
@@ -106,7 +104,13 @@ export function Register() {
                   <fieldset className="stay-options">
                     <legend>Elige tu opción</legend>
                     <p className="stay-schedule">La fiesta es el sábado. Puedes llegar desde el viernes y pasar una o dos noches.</p>
-                    <p className="stay-includes">El precio incluye la paella del sábado, la comida del domingo y DJs.</p>
+                    <p className="stay-beds">Hay <strong>26 plazas en cama</strong>. Furgo y tienda, las que hagan falta.</p>
+                    <div className="stay-info">
+                      <p className="stay-includes">Alojamiento, paella del sábado, comida del domingo, DJs y, según cuántos nos apuntemos, también la bebida.</p>
+                      <button ref={infoTrigger} className="info-button" type="button" onClick={() => setInfoOpen(true)}>
+                        qué incluye <span>↗</span>
+                      </button>
+                    </div>
                     {STAY_OPTIONS.map((option) => (
                       <label className="stay-option" key={option.value}>
                         {stay === option.value && (
@@ -142,6 +146,14 @@ export function Register() {
           </Reveal>
         </div>
       </div>
+
+      <IncludesDialog
+        open={infoOpen}
+        onClose={() => {
+          setInfoOpen(false);
+          infoTrigger.current?.focus();
+        }}
+      />
     </section>
   );
 }
